@@ -22,10 +22,11 @@ Api key is stored in .env file using npm dotenv so users can not access the api 
 Using Webpack, build the app and add the html file to dist folder and removing all the linked files to html and add them to single link.
 
 ## CSS to SCSS
-converted the css files to scss and combine them to single file in dist folder.
+converted the css files to scss and combine them to single file in dist folder by using Sass and Style loader.
 
-## Single Js
-Combine all javascript files into single file in dist folder.
+## Babel
+Used to combine all javascript files into single file in dist folder. 
+Make any broswer understand the Javascript despite the version.
 
 ## Implementation
 Making an end point to post the recieved text to the url and encode it so it can fit the url and fetch it.
