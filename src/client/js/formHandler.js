@@ -6,7 +6,7 @@ function handleSubmit(event) {
     const text = document.getElementById('name').value
 
     console.log("::: Form Submitted :::")
-    fetch('/', {
+    fetch('/analyse', {
         method: 'POST',
         body: `recieved=${text}`,
         headers: {

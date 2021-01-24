@@ -17,11 +17,11 @@ app.use(express.urlencoded({
 
 app.use(express.static('dist'))
 
-app.post('/', (req, res) => {
+app.post('/analyse', (req, res) => {
     const recieved = req.body.recieved;
     const url = `https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=${encodeURI(recieved)}&lang=en`;
     fetch(url)
-        .then(response => response.json())
+        .then(resp => resp.json())
         .then(data => res.json(data))
         .catch(err => console.log(err));
 });
