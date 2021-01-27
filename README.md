@@ -11,31 +11,25 @@ process and analyze large amounts of natural language data.
 You could spend years and get a masters degree focusing on the details of creating NLP systems and algorithms. Typically, NLP programs require far more resources than individuals have access to, but a fairly new API called Meaningcloud has put a public facing API in front of their NLP system.
 
 ## Getting started
+Use anyway you like to extract the rapistory to run and test the project
 
-I installed everything I need for the project using
-- `npm install`
+## Start by installing all the needed packages
+- Install them by using `npm install`
 
-## API_KEY
-Api key is stored in .env file using npm dotenv so users can not access the api key and get it in server side to use it for api link.
+## API KEY
+Go to [Meaningcloud](https://www.meaningcloud.com/) and request for your personal api key, then create .env file in the root to add your api key there.
 
-## HTML
-Using Webpack, build the app and add the html file to dist folder and removing all the linked files to html and add them to single link.
+## Building Envoriments
+Since Webpack is used, there are two modes to run the application which is **Production** and **Development** mode.
 
-## CSS to SCSS
-converted the css files to scss and combine them to single file in dist folder by using Sass and Style loader.
+**Production**: run this command in the terminal "npm run build-prod" then start the server by using "npm start" and it will be ran on the given port.
+**Development**: run this command in the terminal "npm run build-dev" and it will run and open the page automatically.
 
-## Babel
-Used to combine all javascript files into single file in dist folder. 
-Make any broswer understand the Javascript despite the version.
+## Port
+The assigned port in the server is **7070**. To run the localhost go to **http://localhost:7070/**.
 
-## Implementation
-Making an end point to post the recieved text to the url and encode it so it can fit the url and fetch it.
+## Testing
+To test the app by using **Jest** run "npm run test".
 
 
-## Jest
-Install Jest to try testing formHandler
-
-## Service Workers
-A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction.
-Installing and adding it to the project.
 
