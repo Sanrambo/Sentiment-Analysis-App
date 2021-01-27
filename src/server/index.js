@@ -1,34 +1,69 @@
+const projectData = [];
 const fetch = require('node-fetch');
-var path = require('path')
-const express = require('express')
+var path = require('path');
+const express = require('express');
+var bodyParser = require("body-parser");
+var cors = require("cors");
 
 const dotenv = require('dotenv')
 dotenv.config();
 
-const application_key = process.env.API_KEY;
+const App_API = process.env.API_KEY;
 
-console.log(application_key);
+const app = express();
 
-const app = express()
+app.use(bodyParser.json());
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(express.static('dist'));
 
-app.use(express.static('dist'))
+const FormingURL = async (url) => {
 
+    const link = `https://api.meaningcloud.com/sentiment-2.1?key=${App_API}&of=json&url=${url}&lang=en`;
+    const res = await fetch(link);
+    console.log(res);
+
+    try {
+        const result = await res.json();
+        return result;
+    } catch (error) {
+        console.log("error", error);
+    }
+};
+
+// Get Endpoint
+app.get("/path", function (req, res) {
+    res.send(projectData);
+});
+
+// Post Endpoint
 app.post('/analyse', (req, res) => {
     const recieved = req.body.recieved;
-    const url = `https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=${encodeURI(recieved)}&lang=en`;
-    fetch(url)
-        .then(resp => resp.json())
-        .then(data => res.json(data))
-        .catch(err => console.log(err));
+    const UrlValid = encodeURI(recieved);
+
+    const result = (output) => {
+
+        retrievedData = {
+
+            agreement: output.agreement,
+            subjectivity: output.subjectivity,
+            confidence: output.confidence,
+            irony: output.irony
+
+        }
+        projectData.push(retrievedData);
+        res.send(projectData);
+    }
+
+    FormingURL(UrlValid)
+        .then(result);
+
 });
 
 
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
+app.listen(7070, function () {
+    console.log('Example app listening on port 7070!')
 })

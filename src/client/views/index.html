@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
+    <title>Sentiment Analysis</title>
 </head>
 
 <body>
 
     <header>
         <div class="">
-            Logo
+            Sentiment Analysis App
         </div>
         <div class="">
             navigation
@@ -20,7 +20,7 @@
     <main>
         <section>
             <form class="" onsubmit="return handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                <input id="name" type="text" name="input" value="" placeholder="Enter URL">
                 <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
                     onsubmit="return handleSubmit(event)">
             </form>
@@ -28,7 +28,20 @@
 
         <section>
             <strong>Form Results:</strong>
-            <div id="results"></div>
+            <div id="results">
+                <div>
+                    <p>Agreement: <b id="agreement"></b></p>
+                </div>
+                <div>
+                    <p>Subjectivity: <b id="subjectivity"></b></p>
+                </div>
+                <div>
+                    <p>Confidence: <b id="confidence"></b></p>
+                </div>
+                <div>
+                    <p>Irony: <b id="irony"></b></p>
+                </div>
+            </div>
         </section>
     </main>
 
