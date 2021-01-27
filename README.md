@@ -1,4 +1,4 @@
-# Sentiment Analysis
+# Sentiment Analysis Website
 
 This repo is your full code for the Sentiment Analysis Console project.
 
@@ -22,8 +22,8 @@ Go to [Meaningcloud](https://www.meaningcloud.com/) and request for your persona
 ## Building Envoriments
 Since Webpack is used, there are two modes to run the application which is **Production** and **Development** mode.
 
-**Production**: run this command in the terminal "npm run build-prod" then start the server by using "npm start" and it will be ran on the given port.
-**Development**: run this command in the terminal "npm run build-dev" and it will run and open the page automatically.
+* **Production**: run this command in the terminal "npm run build-prod" then start the server by using "npm start" and it will be ran on the given port.
+* **Development**: run this command in the terminal "npm run build-dev" and it will run and open the page automatically.
 
 ## Port
 The assigned port in the server is **7070**. To run the localhost go to **http://localhost:7070/**.
